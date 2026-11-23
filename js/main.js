@@ -76,7 +76,7 @@
     if (!grid) return;
     grid.innerHTML = SITE.products.map(function (p) {
       return '<a class="card" href="product.html?item=' + encodeURIComponent(p.id) + '">' +
-        '<div class="ph" style="aspect-ratio:1/1;background:' + esc(p.tint) + '">' + photoInner(p.image, p.name) +
+        '<div class="ph focus-in" style="aspect-ratio:1/1;background:' + esc(p.tint) + '">' + photoInner(p.image, p.name) +
         (p.image ? '' : '<span class="label ph-label">Product photo</span>') + '</div>' +
         '<h2 class="card-name">' + esc(p.name) + '</h2>' +
         '<p class="card-price">' + esc(p.price) + '</p>' +

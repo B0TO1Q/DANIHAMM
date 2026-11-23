@@ -203,6 +203,13 @@ select.field option{background:#0B1416;color:#E6EEEF}
 #pdp-stage,#pdp-art{transition:none}
 #pdp-stage.is-ready,#pdp-art.is-ready{transition:background-color .5s ease}
 
+/* ---------- focus pull on every page: sharp once fully on screen ---------- */
+@media (prefers-reduced-motion: no-preference){
+@supports (animation-timeline: view()){
+.focus-in{will-change:filter,opacity;animation:pull cubic-bezier(0.25,0.6,0.3,1) both;animation-timeline:view();animation-range:entry 0% entry 100%}
+}
+}
+
 .cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .tile img,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph{position:relative;overflow:hidden}
