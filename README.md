@@ -11,7 +11,8 @@ A minimal, cinematic portfolio and shop for wildlife photographer Dani Hamm ([@d
 | `index.html` | Hero, three scroll "field moments" (first light, fog, golden hour), filterable portfolio |
 | `shop.html` | Prints & goods grid |
 | `product.html?item=<id>` | Product page: pick a print, size, color (mug & tee), quantity |
-| `about.html` | Bio, contact links, inquiry form |
+| `about.html` | Portrait and a short bio in Dani's voice |
+| `contact.html` | Email, links, inquiry form |
 
 Product ids: `print`, `canvas`, `framed`, `metal`, `mug`, `postcards`, `calendar`, `tee`.
 
@@ -23,7 +24,7 @@ Product ids: `print`, `canvas`, `framed`, `metal`, `mug`, `postcards`, `calendar
 
 ## Still to connect
 
-- **Inquiry form:** replace `YOUR_FORM_ID` in `about.html` with a form service (e.g. Formspree).
+- **Inquiry form:** replace `YOUR_FORM_ID` in `contact.html` with a form service (e.g. Formspree).
 - **Checkout:** the cart is saved in the visitor's browser only. Connect a store (Shopify, Square, Snipcart) and a print-on-demand partner for real orders.
 - **Prices, sizes, shipping, returns:** fill in the `[bracketed]` placeholders.
 

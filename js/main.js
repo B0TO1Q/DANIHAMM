@@ -78,7 +78,8 @@
       return '<a class="card" href="product.html?item=' + encodeURIComponent(p.id) + '">' +
         '<div class="ph" style="aspect-ratio:1/1;background:' + esc(p.tint) + '">' + photoInner(p.image, p.name) +
         (p.image ? '' : '<span class="label ph-label">Product photo</span>') + '</div>' +
-        '<div class="card-row"><h2 class="card-name">' + esc(p.name) + '</h2><span class="card-price">' + esc(p.price) + '</span></div>' +
+        '<h2 class="card-name">' + esc(p.name) + '</h2>' +
+        '<p class="card-price">' + esc(p.price) + '</p>' +
         '<p class="card-blurb">' + esc(p.blurb) + '</p>' +
         '<span class="card-cta">Choose options</span></a>';
     }).join('');
@@ -161,6 +162,10 @@
       paint();
     });
     paint();
+    // fade between choices only after the first paint
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { stage.classList.add('is-ready'); art.classList.add('is-ready'); });
+    });
   }
 
   document.addEventListener('DOMContentLoaded', function () {
