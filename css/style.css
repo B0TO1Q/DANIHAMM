@@ -1,6 +1,6 @@
 /* Dani Hamm — site styles */
 body{margin:0;background:#0B1416}
-a{color:#E6EEEF;text-decoration:none}a:hover{color:#E3B172}
+a{color:#E6EEEF;text-decoration:none}a:hover{color:#F08300}
 *,*::before,*::after{box-sizing:border-box}
 .site{container-type:inline-size;container-name:site}
 .root{--gutter:48px;--sec:160px;--gap:24px;--tile:8px}
@@ -132,7 +132,7 @@ a{color:#E6EEEF;text-decoration:none}a:hover{color:#E3B172}
 .card-price{font-size:14px;color:#A9BCBE;white-space:nowrap}
 .card-blurb{margin:-8px 0 0;font-size:13px;color:#8DA3A6}
 .card-cta{align-self:flex-start;font-size:14px;font-weight:500;line-height:30px;border-bottom:1px solid #E6EEEF}
-.card:hover .card-cta{color:#E3B172;border-bottom-color:#E3B172}
+.card:hover .card-cta{color:#F08300;border-bottom-color:#F08300}
 .thumb{aspect-ratio:4/5;min-height:44px;padding:0;border:none;opacity:0.7;cursor:pointer}
 .thumb.is-on{opacity:1;box-shadow:0 0 0 2px #0B1416,0 0 0 3px #E6EEEF}
 .chip{height:44px;min-width:56px;padding:0 16px;border-radius:999px;border:1px solid #34494F;background:transparent;color:#C9D6D8;font:400 14px 'DM Sans',sans-serif;cursor:pointer;white-space:nowrap}
