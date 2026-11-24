@@ -40,4 +40,4 @@ Works on GitHub Pages as-is (Settings → Pages → deploy from `main`).
 
 ## Tech
 
-Plain HTML, CSS, and JavaScript, with no build step. Layout adapts with CSS container queries. Scroll effects use CSS scroll-driven animations (Chrome, Edge, Safari 26+); other browsers show the finished state. Motion is disabled for visitors who prefer reduced motion.
+Plain HTML, CSS, and JavaScript, with no build step. Mouse-wheel and trackpad scrolling glides slightly slower for a smoother feel (`initSmoothScroll` in `js/main.js`; tune `SPEED` and `EASE`); touch scrolling stays native. Layout adapts with CSS container queries. Scroll effects use CSS scroll-driven animations (Chrome, Edge, Safari 26+); other browsers show the finished state. Motion is disabled for visitors who prefer reduced motion.
