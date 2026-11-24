@@ -56,7 +56,7 @@
       grid.innerHTML = SITE.photos.filter(function (p) {
         return current === 'All' || p.category === current;
       }).map(function (p) {
-        return '<figure class="tile ph" style="margin:0;aspect-ratio:4/5;background:' + esc(p.tint) + '">' +
+        return '<figure class="tile ph lit" style="margin:0;aspect-ratio:4/5;background:' + esc(p.tint) + '">' +
           photoInner(p.src, p.title) +
           '<figcaption class="label ph-label">' + esc(p.title) + '</figcaption></figure>';
       }).join('');
@@ -76,7 +76,7 @@
     if (!grid) return;
     grid.innerHTML = SITE.products.map(function (p) {
       return '<a class="card" href="product.html?item=' + encodeURIComponent(p.id) + '">' +
-        '<div class="ph focus-in" style="aspect-ratio:1/1;background:' + esc(p.tint) + '">' + photoInner(p.image, p.name) +
+        '<div class="ph focus-in lit" style="aspect-ratio:1/1;background:' + esc(p.tint) + '">' + photoInner(p.image, p.name) +
         (p.image ? '' : '<span class="label ph-label">Product photo</span>') + '</div>' +
         '<h2 class="card-name">' + esc(p.name) + '</h2>' +
         '<p class="card-price">' + esc(p.price) + '</p>' +
@@ -113,7 +113,7 @@
 
       stage.style.background = p.mockup && col ? col.hex : '#16262A';
       art.style.width = p.mockup ? '38%' : '78%';
-      art.style.boxShadow = p.mockup ? 'none' : '0 30px 60px rgba(0,0,0,0.45)';
+      art.style.boxShadow = p.mockup ? 'none' : '';
       art.style.background = pr.tint;
       art.innerHTML = photoInner(pr.src, pr.title);
       stageLabel.style.color = light ? 'rgba(11,20,22,0.7)' : 'rgba(230,238,239,0.75)';
@@ -123,7 +123,7 @@
       document.getElementById('size-name').textContent = p.sizes[st.size];
 
       document.getElementById('print-opts').innerHTML = opt('print', SITE.photos, st.print, function (t, i, on) {
-        return '<button type="button" class="thumb ph' + (on ? ' is-on' : '') + '" aria-pressed="' + on + '" aria-label="' + esc(t.title) + '" data-print="' + i + '" style="background:' + esc(t.tint) + '">' + photoInner(t.src, '') + '</button>';
+        return '<button type="button" class="thumb ph lit-sm' + (on ? ' is-on' : '') + '" aria-pressed="' + on + '" aria-label="' + esc(t.title) + '" data-print="' + i + '" style="background:' + esc(t.tint) + '">' + photoInner(t.src, '') + '</button>';
       });
       document.getElementById('size-opts').innerHTML = opt('size', p.sizes, st.size, function (z, i, on) {
         return '<button type="button" class="chip' + (on ? ' is-on' : '') + '" aria-pressed="' + on + '" data-size="' + i + '">' + esc(z) + '</button>';
