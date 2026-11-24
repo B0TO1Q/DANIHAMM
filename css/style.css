@@ -96,9 +96,6 @@ a{color:#E6EEEF;text-decoration:none}a:hover{color:#F08300}
 @keyframes capIn{from{opacity:0;transform:translate3d(0,24px,0)}}
 @keyframes dawn{from{opacity:0.5}}
 @keyframes shade{to{opacity:0.65}}
-@keyframes par1{to{translate:0 -18%}}
-@keyframes par2{to{translate:0 -32%}}
-@keyframes par3{to{translate:-6% 8%}}
 @keyframes pull{from{filter:blur(6px);opacity:0.4}}
 @media (prefers-reduced-motion: reduce){.fog,.beam,.glow{animation:none}}
 
@@ -209,6 +206,20 @@ select.field option{background:#0B1416;color:#E6EEEF}
 .focus-in{will-change:filter,opacity;animation:pull cubic-bezier(0.25,0.6,0.3,1) both;animation-timeline:view();animation-range:entry 0% entry 100%}
 }
 }
+
+/* ---------- page background v2: no heavy blur filters (iOS-safe), covers top to bottom ---------- */
+.atmo{background:radial-gradient(ellipse 80% 55% at 72% 0%,rgba(111,142,148,0.24),rgba(11,20,22,0) 70%),radial-gradient(ellipse 75% 45% at 18% 100%,rgba(111,142,148,0.12),rgba(11,20,22,0) 70%),#0B1416}
+.atmo .beam{filter:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 65%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 25%,#000 65%,transparent 100%)}
+.atmo .beam-1{background:linear-gradient(90deg,rgba(255,224,180,0) 0%,rgba(255,224,180,0.05) 30%,rgba(255,224,180,0.09) 50%,rgba(255,224,180,0.05) 70%,rgba(255,224,180,0) 100%)}
+.atmo .beam-2{background:linear-gradient(90deg,rgba(190,220,226,0) 0%,rgba(190,220,226,0.04) 30%,rgba(190,220,226,0.07) 50%,rgba(190,220,226,0.04) 70%,rgba(190,220,226,0) 100%)}
+.atmo .beam-3{background:linear-gradient(90deg,rgba(255,224,180,0) 0%,rgba(255,224,180,0.035) 30%,rgba(255,224,180,0.06) 50%,rgba(255,224,180,0.035) 70%,rgba(255,224,180,0) 100%)}
+.atmo-fog,.atmo-fog2{position:absolute;left:-40%;right:-40%;top:-30%;bottom:-30%;pointer-events:none}
+.atmo-fog{background:radial-gradient(ellipse 55% 7% at 28% 16%,rgba(205,222,226,0.07),rgba(205,222,226,0) 100%),radial-gradient(ellipse 65% 8% at 70% 36%,rgba(205,222,226,0.06),rgba(205,222,226,0) 100%),radial-gradient(ellipse 60% 8% at 34% 58%,rgba(205,222,226,0.07),rgba(205,222,226,0) 100%),radial-gradient(ellipse 70% 9% at 66% 80%,rgba(205,222,226,0.08),rgba(205,222,226,0) 100%);animation:drift 90s linear infinite alternate}
+.atmo-fog2{background:radial-gradient(ellipse 60% 7% at 62% 24%,rgba(205,222,226,0.05),rgba(205,222,226,0) 100%),radial-gradient(ellipse 50% 6% at 22% 46%,rgba(205,222,226,0.05),rgba(205,222,226,0) 100%),radial-gradient(ellipse 65% 8% at 58% 68%,rgba(205,222,226,0.06),rgba(205,222,226,0) 100%),radial-gradient(ellipse 55% 7% at 30% 90%,rgba(205,222,226,0.06),rgba(205,222,226,0) 100%);animation:drift 60s linear infinite alternate-reverse}
+@keyframes par1{to{translate:0 -8%}}
+@keyframes par2{to{translate:0 -14%}}
+@keyframes par3{to{translate:-3% 4%}}
+@media (prefers-reduced-motion: reduce){.atmo-fog,.atmo-fog2{animation:none}}
 
 .cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .tile img,.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
